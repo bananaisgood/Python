@@ -1,1 +1,1 @@
-# Python의 
+# Python의 기초!!
