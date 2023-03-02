@@ -1,0 +1,144 @@
+# 산술연산
+a = 17
+b = 3
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+# 거듭제곱 (power)
+print(a ** b)
+# 몫 (floor division)
+print(a // b)
+# 나머지 (modulo)
+print(a % b)
+
+# 비교연산
+a, b = 5, 3
+print(a == b)
+print(a != b)
+print(a > b)
+print(a >= b)
+print(a < b)
+print(a <= b)
+# print(a =< b)
+print(a is b)
+print(a is not b)
+
+print(1 < a < b)
+
+# and : 둘 다 참일때만 참
+print(True and True)
+print(True & True)
+# or : 둘 중 하나이상 참이면 참
+print(True or False)
+print(True | False)
+
+print(not True)
+
+# 멤버연산
+list01 = [1, 2, 3, 4, 5]
+print(3 in list01)
+print(6 in list01)
+print(6 not in list01)
+
+# range() : 해당 범위의 숫자 생성
+print(range(10))
+print(type(range(10)))
+
+# range(stop) : 0 ~ stop-1 생성
+list02 = list(range(10))
+print(list02)
+
+# range(start, stop) : start ~ stop-1 생성
+list03 = list(range(10, 20))
+print(list03)
+
+# range(start, stop, step) : start, start+step, start+step+step, ... stop-1
+list04 = list(range(1, 10, 2))
+print(list04)
+
+# 거꾸로 10 ~ 1
+list05 = list(range(10, 0, -1))
+print(list05)
+
+# slice
+original = list(range(100))
+print(original)
+
+# [n] : n index value
+print(original[3])
+# [start: stop] : start index ~ stop index - 1
+print(original[3: 10])
+# [start: stop: step] : start index, start index + step, ...,  stop index -1
+print(original[10: 20: 2])
+
+# 없으면?
+print(original[ : 10])
+print(original[80: ])
+print(original[::10])
+
+slice01 = original[20:10:-1]
+print(slice01)
+print(original[::-10])
+
+hello = "Hello, World!"
+# ! 빼고 출력
+print(hello[:12])
+print(hello[0: 12])
+print(hello[: -1])
+
+# World 만 출력
+print(hello[7:12])
+print(hello[7:-1])
+# World 만 두번 출력
+print(hello[7: 12] * 2)
+
+# 거꾸로 출력
+print(hello[-1])
+print(hello[-1:])
+print(hello[:-1])
+print(hello[::-1])
+
+# 증감 연산자
+c = 10
+# c의 값에 1을 더해서 다시 c에 대입하고 싶다.
+c = c + 1
+print(c)
+c += 1
+print(c)
+# c의 값에서 1을 빼서 다시 c에 대입하고 싶다.
+# c = c -1
+c -= 1
+print(c)
+
+c *= 2
+print(c)
+
+c /= 3
+print(c)
+
+'''
+a = input()
+print(f'입력하신 값은 : {a}')
+print(type(a))
+'''
+
+# 이름과 국어점수, 영어점수, 수학점수를 입력받아서
+# dictionary에 name, kor, eng, math, sum, average 라는 key 값을 통해
+# 입력된 값과, 총점, 평균을 value로 저장하자.
+
+name = input("이름 입력 : ")
+kor = input("국어 점수 : ")
+eng = input("영어 점수 : ")
+math = input("수학 점수 : ")
+# print(name, kor, eng, math)
+
+score = dict()
+score['name'] = name
+score['kor'] = kor
+score['eng'] = eng
+score['math'] = math
+score['sum'] = int(kor) + int(eng) + int(math)
+score['average'] = (int(kor) + int(eng) + int(math))/3
+
+print(score)
