@@ -1,0 +1,228 @@
+# if 조건:
+a = 1
+
+if a == 1:
+    print(f'{a} == 1')
+
+# if 조건: ~~ else:
+b = 2
+
+if a == b:
+    print(f'{a} == {b}')
+else:
+    print(f'{a} != {b}')
+
+# if 조건: ~~ elif 조건: ~~
+if a > b:
+    print('a 가 b보다 큽니다.')
+elif a < b:
+    print('a 가 b보다 작습니다.')
+elif a == b:
+    print('a 랑 b랑 같습니다.')
+
+# if 조건: ~~ elif 조건: ~~ else: ~~
+c = 2
+if b > c:
+    print(f'{b} > {c}')
+elif b < c:
+    print(f'{b} < {c}')
+else:
+    print(f'{b} == {c}')
+
+# 중첩
+wheel = 2
+engine = True
+
+if engine:
+    if wheel == 2:
+        print('바이크')
+    elif wheel == 4:
+        print('자동차')
+else:
+    if wheel == 2:
+        print('자전거')
+    elif wheel == 4:
+        print('유모차')
+
+# 아무것도 없는 문자열 : False
+if "":
+    print("False")
+elif "a":
+    print("True")
+
+# 비어있는 [], (), {} : False
+if []:
+    print('[] is False')
+elif ():
+    print('() if False')
+elif {}:
+    print('{} is False')
+elif [1, 2]:
+    print('값이 있으면 True')
+
+# 0 : False / 1 : True
+if 0:
+    print('0 is False')
+elif 1:
+    print('1 is True')
+
+# None : False
+if None:
+    print('False')
+else:
+    print('True')
+
+# 3.10 ~
+# match ~ case
+
+a = input("1 ~ 3 사이의 값을 입력해 주세요 : ")
+match a:
+    case "1":
+        print('one')
+    case "2":
+        print('two')
+    case "3":
+        print('three')
+
+season = int(input('월 입력 : '))
+match season:
+    case 12 | 1 | 2:
+        print('겨울')
+    case 3 | 4 | 5:
+        print('봄')
+    case 6 | 7 | 8:
+        print('여름')
+    case 9 | 10 | 11:
+        print('가을')
+    case _:
+        print("1 ~ 12 사이의 값만 입력해 주세요")
+        # _ : 값을 사용하고 싶지 않을 때!
+
+# for : 반복문
+# for 변수 in collections:
+# collections : list, tuple, set, dict, ...
+
+subjects = ['python', 'django', 'tensorflow']
+for sub in subjects:
+    print(sub)
+
+# range
+for i in range(100):
+    print(i, end='\t')
+print()
+
+for i in range(100, 0, -1):
+    print(i, end='\t')
+print()
+# iterable 한 객체들 (__iter__, __next__)
+
+# 반복문 중첩!
+for i in range(1, 10):
+    print(i)
+    for j in range(1, 10):
+        print(f'{i} : {j}')
+
+# _ : 값을 사용하고 싶지 않음!
+for _ in range(10):
+    print('hello')
+
+# enumerate : (index, value)
+for item in enumerate(subjects):
+    print(item)
+
+# unpacking
+for idx, val in enumerate(subjects):
+    print(f'{idx}: {val}')
+
+# 구구단 출력
+"""
+ex)
+2단
+2 * 1 = 2
+2 * 2 = 4
+...
+
+9단
+9 * 1 = 9
+...
+9 * 9 = 81
+"""
+for i in range(2, 10):
+    print(f'{i}단')
+    for j in range(1, 10):
+        print(f'{i} * {j} = {i * j}')
+
+# while 조건:
+# 조건이 True 인 동안 반복
+
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+print(f'while이 종료된 후의 i값 : {i}')
+
+my_sum = 0
+my_count = 1
+while my_count <= 10:
+    my_sum += my_count
+    my_count += 1
+
+print(f'{my_sum} / {my_count}')
+
+# break : 반복문을 종료하고 다음 명령 수행
+i = 1
+while i <= 10:
+    if i > 5:
+        break
+    print(i, end=' ')
+    i += 1
+print()
+
+# continue : 아래의 코드를 무시하고 다음 반복 진행
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i, end=' ')
+print()
+
+# loop + else : 반복문이 정상 종료된 후 else 명령 수행
+for i in range(3, 0, -1):
+    print(i, end=' ')
+else:
+    print("땡!")
+
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i, end=' ')
+else:
+    print('홀수 출력 완료!')
+
+for i in range(10):
+    if i > 5:
+        break
+    print(i, end=' ')
+else:
+    print('5개 출력 완료!')
+
+list01 = list()
+for i in range(1, 11):
+    list01.append(f'a{i}')
+print(list01)
+
+# 한 줄로 표현
+list02 = [f'a{i}' for i in range(1, 11)]
+print(list02)
+
+list03 = [i for i in range(1, 11) if i % 2 == 0]
+print(list03)
+
+# a를 포함하고 있는 데이터만 뽑아서 리스트로 만들자.
+subjects = ['python', 'analysis', 'database', 'html', 'css',
+            'javascript', 'django', 'science']
+list04 = [sub for sub in subjects if 'a' in sub]
+print(list04)
+
+# [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]] 을 만들고 싶다.
+list05 = [[4 * i + j for j in range(4)] for i in range(4)]
+print(list05)
